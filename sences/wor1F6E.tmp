@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://oyi4l1gj8u7o"]
+
+[ext_resource type="PackedScene" uid="uid://dpqktdry43m3i" path="res://sences/player.tscn" id="1_lvhy1"]
+[ext_resource type="PackedScene" uid="uid://b1l040286la4e" path="res://sences/tower.tscn" id="2_mlrpd"]
+[ext_resource type="PackedScene" uid="uid://xew0nilyv4p3" path="res://sences/dia.tscn" id="3_kug86"]
+[ext_resource type="PackedScene" uid="uid://c3r6u6rexwohe" path="res://sences/bullet.tscn" id="4_o8sat"]
+
+[node name="world" type="Node2D"]
+
+[node name="dia" parent="." instance=ExtResource("3_kug86")]
+position = Vector2(604, 327)
+scale = Vector2(0.75, 0.75)
+
+[node name="player" parent="." instance=ExtResource("1_lvhy1")]
+position = Vector2(751, 337)
+scale = Vector2(0.2, 0.2)
+
+[node name="tower" parent="." instance=ExtResource("2_mlrpd")]
+position = Vector2(822, 333)
+scale = Vector2(0.32, 0.32)
+
+[node name="bullet" parent="." instance=ExtResource("4_o8sat")]
+position = Vector2(14, -16)
+
+[connection signal="holding" from="player" to="tower" method="_on_player_holding"]
+[connection signal="unholding" from="player" to="tower" method="_on_player_unholding"]
+[connection signal="body_entered" from="tower" to="tower" method="_on_body_entered"]
+[connection signal="body_exited" from="tower" to="tower" method="_on_body_exited"]
+[connection signal="can_hold" from="tower" to="player" method="_on_tower_can_hold"]
+[connection signal="cant_hold" from="tower" to="player" method="_on_tower_cant_hold"]

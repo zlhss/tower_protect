@@ -1,0 +1,186 @@
+[gd_scene load_steps=29 format=4 uid="uid://oyi4l1gj8u7o"]
+
+[ext_resource type="Texture2D" uid="uid://dgmojslcn2x1u" path="res://assets/tilemap/branch.png" id="1_178gq"]
+[ext_resource type="PackedScene" uid="uid://dpqktdry43m3i" path="res://sences/player.tscn" id="1_lvhy1"]
+[ext_resource type="Script" path="res://sences/world.gd" id="1_sodxb"]
+[ext_resource type="Texture2D" uid="uid://bh4nlw5uquisl" path="res://assets/tilemap/empty_gress.png" id="2_haisq"]
+[ext_resource type="PackedScene" uid="uid://b1l040286la4e" path="res://sences/tower.tscn" id="2_mlrpd"]
+[ext_resource type="Texture2D" uid="uid://rwleqosue88o" path="res://assets/tilemap/flower.png" id="3_c5di8"]
+[ext_resource type="PackedScene" uid="uid://xew0nilyv4p3" path="res://sences/dia.tscn" id="3_kug86"]
+[ext_resource type="PackedScene" uid="uid://c3r6u6rexwohe" path="res://sences/bullet.tscn" id="4_o8sat"]
+[ext_resource type="Texture2D" uid="uid://6tuxtxao4gx2" path="res://assets/tilemap/gress.png" id="4_slt1f"]
+[ext_resource type="Texture2D" uid="uid://coyi3mv6i73l5" path="res://assets/tilemap/1.png" id="5_uqaxv"]
+[ext_resource type="PackedScene" uid="uid://lvatq7t834ba" path="res://sences/heart.tscn" id="11_xymhq"]
+[ext_resource type="Texture2D" uid="uid://bxqyr2jmpxt68" path="res://assets/title/gameover_1.png" id="12_s6k7t"]
+[ext_resource type="Texture2D" uid="uid://bjj7ffgibueee" path="res://assets/title/gameover_2.png" id="13_mvrj5"]
+[ext_resource type="Script" path="res://sences/gameover.gd" id="14_ujyrs"]
+[ext_resource type="Script" path="res://sences/button.gd" id="15_uwdxk"]
+[ext_resource type="Texture2D" uid="uid://t1qsdld2omvf" path="res://assets/title/restart_1.png" id="15_ytr6d"]
+[ext_resource type="Texture2D" uid="uid://emdc0avityls" path="res://assets/title/restart_ 2.png" id="16_vebg5"]
+[ext_resource type="Script" path="res://sences/retry.gd" id="17_5xu1w"]
+[ext_resource type="Script" path="res://sences/enemycreater.gd" id="20_khmpc"]
+[ext_resource type="AudioStream" uid="uid://bwdfakgj8gkby" path="res://assets/song/序列 01.mp3" id="20_uc0ud"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_773o3"]
+texture = ExtResource("1_178gq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srtue"]
+texture = ExtResource("2_haisq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kptn"]
+texture = ExtResource("3_c5di8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e7j5w"]
+texture = ExtResource("4_slt1f")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gvuwr"]
+texture = ExtResource("5_uqaxv")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/probability = 0.1
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/probability = 0.3
+3:0/0 = 0
+3:0/0/probability = 0.6
+
+[sub_resource type="TileSet" id="TileSet_1ms5m"]
+tile_size = Vector2i(64, 64)
+sources/2 = SubResource("TileSetAtlasSource_773o3")
+sources/3 = SubResource("TileSetAtlasSource_srtue")
+sources/4 = SubResource("TileSetAtlasSource_1kptn")
+sources/5 = SubResource("TileSetAtlasSource_e7j5w")
+sources/6 = SubResource("TileSetAtlasSource_gvuwr")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xt75u"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_s6k7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mvrj5")
+}],
+"loop": true,
+"name": &"gameover",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7jy8g"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ytr6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vebg5")
+}],
+"loop": true,
+"name": &"retry",
+"speed": 5.0
+}]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_sodxb")
+
+[node name="map" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAABgABAAAAAAAAAAEABgABAAAAAAAAAAIABgABAAAAAAAAAAMABgABAAAAAAAAAAQABgABAAAAAAAAAAUABgABAAAAAAAAAAYABgABAAAAAAAAAAcABgABAAAAAAAAAAgABgABAAAAAAAAAAkABgABAAAAAAABAAAABgABAAAAAAABAAEABgABAAAAAAABAAIABgABAAAAAAABAAMABgABAAAAAAABAAQABgABAAAAAAABAAUABgABAAAAAAABAAYABgACAAAAAAABAAcABgABAAAAAAABAAgABgABAAAAAAABAAkABgABAAAAAAACAAAABgABAAAAAAACAAEABgACAAAAAAACAAIABgABAAAAAAACAAMABgABAAAAAAACAAQABgADAAAAAAACAAUABgABAAAAAAACAAYABgABAAAAAAACAAcABgABAAAAAAACAAgABgADAAAAAAACAAkABgABAAAAAAADAAAABgABAAAAAAADAAEABgABAAAAAAADAAIABgABAAAAAAADAAMABgABAAAAAAADAAQABgABAAAAAAADAAUABgABAAAAAAADAAYABgABAAAAAAADAAcABgABAAAAAAADAAgABgABAAAAAAADAAkABgABAAAAAAAEAAAABgABAAAAAAAEAAEABgABAAAAAAAEAAIABgABAAAAAAAEAAMABgABAAAAAAAEAAQABgABAAAAAAAEAAUABgABAAAAAAAEAAYABgABAAAAAAAEAAcABgABAAAAAAAEAAgABgABAAAAAAAEAAkABgACAAAAAAAFAAAABgABAAAAAAAFAAEABgABAAAAAAAFAAIABgABAAAAAAAFAAMABgABAAAAAAAFAAQABgABAAAAAAAFAAUABgABAAAAAAAFAAYABgABAAAAAAAFAAcABgABAAAAAAAFAAgABgABAAAAAAAFAAkABgABAAAAAAAGAAAABgABAAAAAAAGAAEABgADAAAAAAAGAAIABgABAAAAAAAGAAMABgABAAAAAAAGAAQABgABAAAAAAAGAAUABgABAAAAAAAGAAYABgABAAAAAAAGAAcABgADAAAAAAAGAAgABgABAAAAAAAGAAkABgABAAAAAAAHAAAABgABAAAAAAAHAAEABgABAAAAAAAHAAIABgABAAAAAAAHAAMABgABAAAAAAAHAAQABgABAAAAAAAHAAUABgABAAAAAAAHAAYABgABAAAAAAAHAAcABgABAAAAAAAHAAgABgABAAAAAAAHAAkABgABAAAAAAAIAAAABgACAAAAAAAIAAEABgABAAAAAAAIAAIABgABAAAAAAAIAAMABgABAAAAAAAIAAQABgABAAAAAAAIAAUABgABAAAAAAAIAAYABgABAAAAAAAIAAcABgABAAAAAAAIAAgABgABAAAAAAAIAAkABgABAAAAAAAJAAAABgABAAAAAAAJAAEABgABAAAAAAAJAAIABgABAAAAAAAJAAMABgABAAAAAAAJAAQABgABAAAAAAAJAAUABgABAAAAAAAJAAYABgABAAAAAAAJAAcABgABAAAAAAAJAAgABgABAAAAAAAJAAkABgABAAAAAAAKAAAABgABAAAAAAAKAAEABgABAAAAAAAKAAIABgABAAAAAAAKAAMABgABAAAAAAAKAAQABgABAAAAAAAKAAUABgADAAAAAAAKAAYABgABAAAAAAAKAAcABgACAAAAAAAKAAgABgABAAAAAAAKAAkABgABAAAAAAALAAAABgABAAAAAAALAAEABgABAAAAAAALAAIABgABAAAAAAALAAMABgABAAAAAAALAAQABgABAAAAAAALAAUABgABAAAAAAALAAYABgABAAAAAAALAAcABgABAAAAAAALAAgABgABAAAAAAALAAkABgABAAAAAAAMAAAABgABAAAAAAAMAAEABgABAAAAAAAMAAIABgABAAAAAAAMAAMABgABAAAAAAAMAAQABgABAAAAAAAMAAUABgABAAAAAAAMAAYABgABAAAAAAAMAAcABgABAAAAAAAMAAgABgABAAAAAAAMAAkABgABAAAAAAANAAAABgACAAAAAAANAAEABgABAAAAAAANAAIABgABAAAAAAANAAMABgABAAAAAAANAAQABgABAAAAAAANAAUABgABAAAAAAANAAYABgABAAAAAAANAAcABgABAAAAAAANAAgABgABAAAAAAANAAkABgABAAAAAAAOAAAABgABAAAAAAAOAAEABgABAAAAAAAOAAIABgABAAAAAAAOAAMABgADAAAAAAAOAAQABgABAAAAAAAOAAUABgABAAAAAAAOAAYABgABAAAAAAAOAAcABgABAAAAAAAOAAgABgABAAAAAAAOAAkABgADAAAAAAAPAAAABgABAAAAAAAPAAEABgABAAAAAAAPAAIABgABAAAAAAAPAAMABgABAAAAAAAPAAQABgABAAAAAAAPAAUABgABAAAAAAAPAAYABgABAAAAAAAPAAcABgABAAAAAAAPAAgABgABAAAAAAAPAAkABgABAAAAAAAQAAAABgABAAAAAAAQAAEABgABAAAAAAAQAAIABgABAAAAAAAQAAMABgABAAAAAAAQAAQABgABAAAAAAAQAAUABgABAAAAAAAQAAYABgABAAAAAAAQAAcABgABAAAAAAAQAAgABgABAAAAAAAQAAkABgABAAAAAAARAAAABgABAAAAAAARAAEABgABAAAAAAARAAIABgABAAAAAAARAAMABgABAAAAAAARAAQABgABAAAAAAARAAUABgABAAAAAAARAAYABgABAAAAAAARAAcABgACAAAAAAARAAgABgABAAAAAAARAAkABgABAAAAAAASAAAABgADAAAAAAASAAEABgABAAAAAAASAAIABgABAAAAAAASAAMABgABAAAAAAASAAQABgABAAAAAAASAAUABgABAAAAAAASAAYABgABAAAAAAASAAcABgABAAAAAAASAAgABgABAAAAAAASAAkABgADAAAAAAAAAAoABgABAAAAAAABAAoABgABAAAAAAACAAoABgABAAAAAAADAAoABgABAAAAAAAEAAoABgABAAAAAAAFAAoABgABAAAAAAAGAAoABgABAAAAAAAHAAoABgABAAAAAAAIAAoABgABAAAAAAAJAAoABgACAAAAAAAKAAoABgABAAAAAAALAAoABgABAAAAAAAMAAoABgABAAAAAAANAAoABgABAAAAAAAOAAoABgABAAAAAAAPAAoABgABAAAAAAAQAAoABgABAAAAAAASAAoABgADAAAAAAARAAoABgACAAAAAAA=")
+tile_set = SubResource("TileSet_1ms5m")
+
+[node name="player" parent="." instance=ExtResource("1_lvhy1")]
+position = Vector2(657, 316)
+scale = Vector2(0.2, 0.2)
+collision_mask = 3
+
+[node name="tower" parent="." instance=ExtResource("2_mlrpd")]
+position = Vector2(656, 269)
+scale = Vector2(0.32, 0.32)
+collision_layer = 2
+collision_mask = 3
+
+[node name="bullet" parent="." instance=ExtResource("4_o8sat")]
+position = Vector2(37, -64)
+
+[node name="dia" parent="." instance=ExtResource("3_kug86")]
+position = Vector2(596, 326)
+scale = Vector2(0.75, 0.75)
+
+[node name="heart" parent="." instance=ExtResource("11_xymhq")]
+position = Vector2(23, 23)
+
+[node name="gameover" type="AnimatedSprite2D" parent="."]
+position = Vector2(585, 264)
+sprite_frames = SubResource("SpriteFrames_xt75u")
+animation = &"gameover"
+frame_progress = 0.150416
+script = ExtResource("14_ujyrs")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 447.0
+offset_top = 415.0
+offset_right = 455.0
+offset_bottom = 424.0
+scale = Vector2(35.6757, 14.6548)
+script = ExtResource("15_uwdxk")
+
+[node name="retry" type="AnimatedSprite2D" parent="Button"]
+position = Vector2(4.03636, 5.39072)
+scale = Vector2(0.0280303, 0.0682371)
+sprite_frames = SubResource("SpriteFrames_7jy8g")
+animation = &"retry"
+frame_progress = 0.033393
+script = ExtResource("17_5xu1w")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_uc0ud")
+volume_db = -10.0
+parameters/looping = true
+
+[node name="enemycreater" type="Node2D" parent="."]
+script = ExtResource("20_khmpc")
+
+[node name="Timer" type="Timer" parent="enemycreater"]
+autostart = true
+
+[connection signal="holding" from="player" to="tower" method="_on_player_holding"]
+[connection signal="left_putdown" from="player" to="tower" method="_on_player_left_putdown"]
+[connection signal="right_putdown" from="player" to="tower" method="_on_player_right_putdown"]
+[connection signal="unholding" from="player" to="tower" method="_on_player_unholding"]
+[connection signal="body_entered" from="tower" to="tower" method="_on_body_entered"]
+[connection signal="body_exited" from="tower" to="tower" method="_on_body_exited"]
+[connection signal="can_hold" from="tower" to="player" method="_on_tower_can_hold"]
+[connection signal="cant_hold" from="tower" to="player" method="_on_tower_cant_hold"]
+[connection signal="shoot" from="tower" to="bullet" method="_on_tower_shoot"]
+[connection signal="heart_down" from="dia" to="heart" method="_on_dia_heart_down"]
+[connection signal="game_end" from="heart" to="player" method="_on_heart_game_end"]
+[connection signal="game_end" from="heart" to="gameover" method="_on_heart_game_end"]
+[connection signal="game_end" from="heart" to="Button" method="_on_heart_game_end"]
+[connection signal="game_end" from="heart" to="Button/retry" method="_on_heart_game_end"]
+[connection signal="game_end" from="heart" to="enemycreater" method="_on_heart_game_end"]
+[connection signal="game_restart" from="Button" to="player" method="_on_button_game_restart"]
+[connection signal="game_restart" from="Button" to="tower" method="_on_button_game_restart"]
+[connection signal="game_restart" from="Button" to="heart" method="_on_button_game_restart"]
+[connection signal="game_restart" from="Button" to="gameover" method="_on_button_game_restart"]
+[connection signal="game_restart" from="Button" to="Button" method="_on_game_restart"]
+[connection signal="game_restart" from="Button" to="Button/retry" method="_on_button_game_restart"]
+[connection signal="game_restart" from="Button" to="enemycreater" method="_on_button_game_restart"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="timeout" from="enemycreater/Timer" to="enemycreater" method="_on_timer_timeout"]

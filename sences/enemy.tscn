@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://i5txcs203ux8"]
+
+[ext_resource type="Texture2D" uid="uid://bn3g4j1i4ow2l" path="res://assets/enemy/enemy.png" id="1_8217y"]
+[ext_resource type="Script" uid="uid://1emc4jt6sh2v" path="res://sences/enemy.gd" id="1_cbrqk"]
+[ext_resource type="Texture2D" uid="uid://clwjfxgxtfdei" path="res://assets/enemy/enemy_1.png" id="2_x2pbu"]
+[ext_resource type="PackedScene" uid="uid://dhalktild503f" path="res://sences/bad.tscn" id="4_3pa1r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1nsl1"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8217y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x2pbu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgxev"]
+size = Vector2(64, 55)
+
+[node name="enemy" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_cbrqk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1nsl1")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_xgxev")
+
+[node name="bad" parent="." instance=ExtResource("4_3pa1r")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

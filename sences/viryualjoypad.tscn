@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhu2klskpcmix"]
+
+[ext_resource type="Texture2D" uid="uid://bh5o1yx38gm33" path="res://assets/contrl/bottom.png" id="1_fynmo"]
+[ext_resource type="Script" uid="uid://bug8qos0bjmj" path="res://sences/control_2.gd" id="2_q8tl5"]
+[ext_resource type="Texture2D" uid="uid://dhjsdbmhkey4c" path="res://assets/contrl/move_bottom.png" id="2_sv8pb"]
+
+[node name="viryualjoypad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -199.0
+offset_top = -189.0
+offset_right = -199.0
+offset_bottom = -189.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
+position = Vector2(-50, -49)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("1_fynmo")
+action = "hold"
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 275.0
+offset_top = -176.0
+offset_right = 275.0
+offset_bottom = -176.0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control2"]
+position = Vector2(-47, -56)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("2_sv8pb")
+script = ExtResource("2_q8tl5")

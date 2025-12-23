@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://dpqktdry43m3i"]
+
+[ext_resource type="Texture2D" uid="uid://bn3yu1tgd7hxr" path="res://assets/player/player_1.png" id="1_akrt1"]
+[ext_resource type="Script" uid="uid://cyjoubjhx2pbc" path="res://Scripts/player.gd" id="1_v2il1"]
+[ext_resource type="Texture2D" uid="uid://c73drbh15ycs" path="res://assets/player/player_2.png" id="2_5c0o0"]
+[ext_resource type="Texture2D" uid="uid://bnejwon8ibvaa" path="res://assets/player/hold.png" id="2_p8833"]
+[ext_resource type="Texture2D" uid="uid://ep1felkd1wco" path="res://assets/player/hold_run_1.png" id="3_gfpvy"]
+[ext_resource type="Texture2D" uid="uid://xlj0vqm1oihr" path="res://assets/player/hold_run_2.png" id="4_2hegt"]
+[ext_resource type="Texture2D" uid="uid://dmptxcw786bxt" path="res://assets/player/run_1.png" id="4_70s3h"]
+[ext_resource type="Texture2D" uid="uid://c2l66sl1yj3up" path="res://assets/player/run_2.png" id="5_h7qhx"]
+[ext_resource type="Script" uid="uid://b3xat6douamb6" path="res://Scripts/state_machince.gd" id="9_86mb3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j00vu"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p8833")
+}],
+"loop": true,
+"name": &"hold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gfpvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2hegt")
+}],
+"loop": true,
+"name": &"hold_run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_akrt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5c0o0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_70s3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h7qhx")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86n8a"]
+size = Vector2(142, 226)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_v2il1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j00vu")
+animation = &"hold_run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_86n8a")
+
+[node name="StatrMathine" type="Node" parent="."]
+script = ExtResource("9_86mb3")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwdfakgj8gkby"
+path="res://.godot/imported/序列 01.mp3-3f0bf61df7149868967078ee87dc97f8.mp3str"
+
+[deps]
+
+source_file="res://assets/song/序列 01.mp3"
+dest_files=["res://.godot/imported/序列 01.mp3-3f0bf61df7149868967078ee87dc97f8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

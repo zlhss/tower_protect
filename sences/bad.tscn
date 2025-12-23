@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhalktild503f"]
+
+[sub_resource type="GDScript" id="GDScript_si4pn"]
+script/source = "extends Node2D
+
+enum state {
+	good,
+	bad
+}
+"
+
+[node name="bad" type="Node2D"]
+script = SubResource("GDScript_si4pn")
