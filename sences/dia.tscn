@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://xew0nilyv4p3"]
 
 [ext_resource type="Texture2D" uid="uid://jbx1nr2v1ox" path="res://assets/dia and ta/dia_1.png" id="1_0s72n"]
-[ext_resource type="Script" uid="uid://c71si70m8p2vi" path="res://sences/dia.gd" id="1_fjhf8"]
+[ext_resource type="Script" uid="uid://c71si70m8p2vi" path="res://Scripts/dia.gd" id="1_fjhf8"]
 [ext_resource type="Texture2D" uid="uid://ba1lva3p7affr" path="res://assets/dia and ta/dia_2.png" id="2_i5woi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jkee"]

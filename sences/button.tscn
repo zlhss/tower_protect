@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://t1qsdld2omvf" path="res://assets/title/restart_1.png" id="2_l3e4y"]
 [ext_resource type="Texture2D" uid="uid://emdc0avityls" path="res://assets/title/restart_ 2.png" id="3_kuyav"]
-[ext_resource type="Script" path="res://sences/retry.gd" id="4_t12jd"]
-[ext_resource type="Script" path="res://sences/button.gd" id="4_x6iru"]
+[ext_resource type="Script" uid="uid://bo8g2mk0mtud" path="res://Scripts/retry.gd" id="4_t12jd"]
+[ext_resource type="Script" uid="uid://c6f7byv20px31" path="res://Scripts/button.gd" id="4_x6iru"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7jy8g"]
 animations = [{

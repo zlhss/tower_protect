@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnacgbf62u460" path="res://assets/heart/full_1.png" id="1_rmkmg"]
 [ext_resource type="Texture2D" uid="uid://pwuburum1tbr" path="res://assets/heart/empty_2.png" id="2_3k7af"]
 [ext_resource type="Texture2D" uid="uid://buwc08psa4mwa" path="res://assets/heart/full_2.png" id="2_a72ro"]
-[ext_resource type="Script" uid="uid://r4uro12dodo2" path="res://sences/heart.gd" id="3_cyil1"]
+[ext_resource type="Script" uid="uid://r4uro12dodo2" path="res://Scripts/heart.gd" id="3_cyil1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nv3l7"]
 animations = [{

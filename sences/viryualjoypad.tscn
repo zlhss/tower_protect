@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhu2klskpcmix"]
 
 [ext_resource type="Texture2D" uid="uid://bh5o1yx38gm33" path="res://assets/contrl/bottom.png" id="1_fynmo"]
-[ext_resource type="Script" uid="uid://bug8qos0bjmj" path="res://sences/control_2.gd" id="2_q8tl5"]
+[ext_resource type="Script" uid="uid://bug8qos0bjmj" path="res://Scripts/control_2.gd" id="2_q8tl5"]
 [ext_resource type="Texture2D" uid="uid://dhjsdbmhkey4c" path="res://assets/contrl/move_bottom.png" id="2_sv8pb"]
 
 [node name="viryualjoypad" type="Control"]

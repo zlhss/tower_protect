@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dgmojslcn2x1u" path="res://assets/tilemap/branch.png" id="1_178gq"]
 [ext_resource type="PackedScene" uid="uid://dpqktdry43m3i" path="res://sences/player.tscn" id="1_lvhy1"]
-[ext_resource type="Script" uid="uid://bvo4bu4gje7gn" path="res://sences/world.gd" id="1_sodxb"]
+[ext_resource type="Script" uid="uid://bvo4bu4gje7gn" path="res://Scripts/world.gd" id="1_sodxb"]
 [ext_resource type="Texture2D" uid="uid://bh4nlw5uquisl" path="res://assets/tilemap/empty_gress.png" id="2_haisq"]
 [ext_resource type="PackedScene" uid="uid://b1l040286la4e" path="res://sences/tower.tscn" id="2_mlrpd"]
 [ext_resource type="Texture2D" uid="uid://rwleqosue88o" path="res://assets/tilemap/flower.png" id="3_c5di8"]
@@ -13,11 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://lvatq7t834ba" path="res://sences/heart.tscn" id="11_xymhq"]
 [ext_resource type="Texture2D" uid="uid://bxqyr2jmpxt68" path="res://assets/title/gameover_1.png" id="12_s6k7t"]
 [ext_resource type="Texture2D" uid="uid://bjj7ffgibueee" path="res://assets/title/gameover_2.png" id="13_mvrj5"]
-[ext_resource type="Script" uid="uid://mekyv2k5etew" path="res://sences/gameover.gd" id="14_ujyrs"]
+[ext_resource type="Script" uid="uid://mekyv2k5etew" path="res://Scripts/gameover.gd" id="14_ujyrs"]
 [ext_resource type="PackedScene" uid="uid://bhu2klskpcmix" path="res://sences/viryualjoypad.tscn" id="17_ksmmh"]
 [ext_resource type="Texture2D" uid="uid://t1qsdld2omvf" path="res://assets/title/restart_1.png" id="17_oamxe"]
 [ext_resource type="Texture2D" uid="uid://emdc0avityls" path="res://assets/title/restart_ 2.png" id="18_00aee"]
-[ext_resource type="Script" uid="uid://c6f7byv20px31" path="res://sences/button.gd" id="18_sj24v"]
+[ext_resource type="Script" uid="uid://c6f7byv20px31" path="res://Scripts/button.gd" id="18_sj24v"]
 [ext_resource type="PackedScene" uid="uid://wmvtvk0f4ktb" path="res://sences/enemycreater.tscn" id="20_wmn44"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_773o3"]
